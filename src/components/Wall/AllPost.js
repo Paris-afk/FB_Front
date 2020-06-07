@@ -27,7 +27,7 @@ function AllPost() {
                 delectus odio accusantium magni, blanditiis omnis ipsum sint
                 sapiente, saepe, animi deleniti consectetur.
               </p>
-              <div class="imagen">
+              <div className="imagen">
                 <img src={paisaje} alt="" />
               </div>
             </div>

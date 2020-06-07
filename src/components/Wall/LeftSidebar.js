@@ -16,31 +16,31 @@ function LeftSidebar() {
       <nav>
         <a href="/#">
           <FontAwesomeIcon icon={faUser} />
-          <nbsp /> Friends
+          &nbsp; Friends
         </a>
         <a href="/#">
           <FontAwesomeIcon icon={faEnvelope} />
-          <nbsp /> Private Messages
+          &nbsp; Private Messages
         </a>
         <a href="/#">
           <FontAwesomeIcon icon={faThumbsUp} />
-          <nbsp /> Pages
+          &nbsp; Pages
         </a>
         <a href="/#">
           <FontAwesomeIcon icon={faPlay} />
-          <nbsp /> Videos
+          &nbsp; Videos
         </a>
         <a href="/#">
           <FontAwesomeIcon icon={faCamera} />
-          <nbsp /> Photos
+          &nbsp; Photos
         </a>
         <a href="/#">
           <FontAwesomeIcon icon={faMusic} />
-          <nbsp /> Music
+          &nbsp; Music
         </a>
         <a href="/#">
           <FontAwesomeIcon icon={faBookOpen} />
-          <nbsp /> Books
+          &nbsp; Books
         </a>
       </nav>
     </div>
