@@ -1,0 +1,133 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #edf0f5 !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+
+header {
+  background: #3b5998;
+  height: 82px;
+  border-bottom: 1px solid #133783;
+}
+
+.fb-logo {
+  width: 192px;
+  height: auto;
+  padding-left: 0px;
+  margin-top: 0px;
+}
+
+.header-block {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 3px;
+}
+
+.logo {
+  width: 50%;
+  float: left;
+}
+
+.logo img {
+  padding-top: 0px;
+}
+
+.header-block label {
+  color: white;
+}
+
+.email {
+  float: left;
+}
+
+.email label {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.email input[type="text"] {
+  height: 20px;
+  width: 150px;
+  border: solid 1px #1d2a5b;
+}
+
+.password {
+  float: left;
+  margin-left: 15px;
+}
+
+.password label {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.password a {
+  color: #8fb1d8;
+  text-decoration: none;
+}
+
+.password input[type="password"] {
+  height: 20px;
+  width: 150px;
+  border: solid 1px #1d2a5b;
+}
+
+.login-button {
+  float: left;
+  margin-left: 20px;
+}
+
+.login-button input[type="submit"] {
+  background: #4267b2;
+  border: 1px solid #29487d;
+  color: white;
+  border-radius: 2px;
+  height: 25px;
+  width: 50px;
+  margin-top: 24px;
+}
+.fb-social {
+  margin-top: 67px;
+}
+
+.fb-social h2 {
+  margin: 0px;
+}
+
+.fb-social .fb-social-p {
+  margin-top: 55px;
+}
+
+.fb-social .fb-social-p p {
+  margin-bottom: 40px;
+  margin-left: 29px;
+}
+
+.fb-form {
+  margin-top: 20px;
+  font-size: small;
+}
+
+.fb-form p {
+  padding-top: 18px;
+  font-size: small;
+  color: #777777;
+}
+
+.fb-form button {
+  background: #69a74e;
+  color: white;
+  margin: 10px 0px;
+  padding: 7px 20px;
+  width: 194px;
+  height: 39px;
+}
+
+.gender input {
+  margin-left: 20px;
+  margin-right: 5px;
+}

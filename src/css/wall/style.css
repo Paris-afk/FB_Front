@@ -1,0 +1,401 @@
+body {
+  background-color: #edf0f5;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+/* aqui se cambia el color de los iconos*/
+a {
+  color: #373737;
+}
+
+/* aqui se cambia el color de los iconos cuando se pone el puntero sobre el*/
+a :hover {
+  color: #373737;
+  text-decoration: none;
+}
+
+/* header */
+
+header {
+  background-color: #4267b2;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid #29487d;
+}
+
+header .logo img {
+  border-radius: 2px;
+}
+
+/* Buscar */
+
+header .buscar form input[type="text"] {
+  width: 100%;
+  background-color: white;
+  border: none;
+  font-size: 14px;
+  /* esto del padin quiere decir 0 arriba y abajo y 10 a los lados */
+  padding: 0px 10px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 3px 0px 0px 3px;
+  color: #6d6d6d;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-left: 9px;
+}
+
+header .buscar button {
+  width: 200%;
+  font-size: 14px;
+  margin-top: 0px;
+  padding: 0 10px;
+  height: 25px;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  color: #6d6d6d;
+  background-color: #edf0f5;
+}
+
+header .buscar button:hover {
+  background: #099efc;
+  color: white;
+}
+
+header .menu {
+  padding: 0%;
+}
+
+header .menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  margin-right: 1px;
+  margin-left: 1px;
+}
+
+header .menu .menu-icons {
+  color: #373737;
+  font-size: 16px;
+}
+
+header .menu .imagen {
+  width: 22px;
+  height: 22px;
+  overflow: hidden;
+  /* el overflow hidden es para ocultar una descripcion si la imagen la tiene  */
+}
+
+header .menu .imagen img {
+  border-radius: 60px;
+  margin-right: 8px;
+}
+
+/* MidiaQueries */
+@media screen and (max-width: 767px) {
+  main .btn-menu {
+    display: block;
+    border: 1px solid #00609c;
+    padding: 5px 10px;
+    font-size: 14px;
+    background: linear-gradient(to bottom, #1a87cd, #1176b6 100%);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  main .btn-menu:hover {
+    text-decoration: none;
+    background: #0d659d;
+  }
+
+  main .left-sidebar {
+    width: 85%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0, 0.85);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  header .menu {
+    padding: 5px 15px 0 15px;
+  }
+  /* arriba , derecha , abajo e izquiera */
+}
+
+/* main */
+
+main {
+  padding-top: 10px;
+}
+
+/* LEFT-SIDEBAR */
+
+.left-sidebar {
+  padding-left: 0%;
+  padding-bottom: 10px;
+  margin-top: 35px;
+}
+
+main .left-sidebar nav {
+  border-bottom: 1px solid #373737;
+}
+
+main .left-sidebar nav a {
+  display: block;
+  /*  usando el display block cada uno abarca el 100% transformandolos en listas    */
+  padding: 3px;
+  font-family: "Roboto", sans-serif;
+  color: #3d3d3d;
+}
+
+main .left-sidebar nav a:hover {
+  background: white;
+  text-decoration: none;
+}
+
+main .left-sidebar nav a i {
+  margin-right: 10px;
+}
+
+/* contenido principal */
+/* publicar */
+main .main-content .post {
+  margin-bottom: 25px;
+  background: white;
+}
+
+main .main-content .post .photo a {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  overflow: hidden;
+  /* este overflow es para decir que el contenido que no cabe se oculte */
+  border-radius: 100px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+main .main-content .post .photo img {
+  width: 100%;
+}
+
+main .main-content .post form textarea {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: #565656;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.35);
+  margin-bottom: 15px;
+}
+
+main .main-content .post form .contenedor-botones {
+  padding: 20px 0px;
+  /* arriba y abajo , 0 hacia los lados */
+  border-top: 1px solid #c7c8ca;
+}
+
+main .main-content .post form .contenedor-botones a {
+  color: #8d8d8d;
+  font-size: 25px;
+}
+
+main .main-content .post form button {
+  border: 1px solid #00609c;
+  padding: 5px 30px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #1a87cd, #1176b6 100%);
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+main .main-content .post form button:hover {
+  background: linear-gradient(to bottom, #1176b6, #1a87cd 100%);
+}
+
+/*publicaciones*/
+
+main .all_post {
+  margin-bottom: 40px;
+  background: white;
+}
+
+main .all_post .photo a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  /* el overflow hidden se usa para que el contenido abarque el maximo de si contenedor en este caso la foto con el cuadro */
+  border-radius: 100px;
+  margin-left: 5px;
+}
+
+main .all_post .photo img {
+  height: 100%;
+  width: 100%;
+}
+
+main .onePost .name {
+  line-height: 16px;
+  /* esta propiedad de line-height es para dejar un espacio entre los parramos de un mismo texto; */
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+main .onePost .text {
+  border-bottom: 1px solid #8d8d8d;
+  background: white;
+  color: #3d3c3c;
+  font-size: 14px;
+  padding: 15px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+main .all_post .imagen {
+  padding: 15px;
+  background: white;
+  margin-bottom: 15px;
+}
+
+main .all_post .imagen img {
+  width: 100%;
+  border-radius: 8px;
+  margin-left: 12%;
+}
+
+main .all_post .caja-botones {
+  margin: 20px;
+}
+
+main .all_post .caja-botones button {
+  background: #1176b6;
+  color: white;
+  cursor: pointer;
+  /* background: white; */
+  padding: 10px 35px;
+  /* pading 10 arriba y 20 a los lados */
+  display: inline-block;
+  font-size: 18px;
+  line-height: 18px;
+  border: none;
+  border-radius: 18px;
+}
+
+main .all_post .caja-botones button:hover {
+  background: #0d659d;
+  color: white;
+}
+
+main .all_post .caja-botones p {
+  margin-bottom: 0px;
+  color: #1782c6;
+}
+/* comentarios */
+
+main .all_post .comentario {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cbcbcb;
+}
+
+main .all_post .comentario .photo {
+  padding-left: 0px;
+  margin-right: 10px;
+}
+
+main .all_post .comentario form textarea {
+  width: 100%;
+  border: 1px solid #cbcbcb;
+  color: #565656;
+  padding: 8px;
+  min-height: 40px;
+  height: 50px;
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+main .all_post .comentario .respuesta {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* caja botones de los comentarios de publicaciones */
+main .all_post .caja-botones-comentarios button {
+  border-radius: 15px;
+  border: none;
+  font-size: 15px;
+  background: white;
+  color: #1782c6;
+}
+
+main .all_post .caja-botones-comentarios button:hover {
+  background: #1782c6;
+  color: white;
+}
+main .all_post .caja-botones-comentarios p {
+  margin-top: 10;
+  padding-top: 10px;
+}
+
+/* para convertir la foto de los comentarios mas pequeña */
+
+main .all_post .comentario .photo a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+/* Barra lateral derecha */
+
+main .right-sidebar h3 {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+main .right-sidebar a {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+main .right-sidebar img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+main .right-sidebar footer a {
+  color: black;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  line-height: 14px;
+  margin-right: 10px;
+}
