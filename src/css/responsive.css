@@ -1,0 +1,435 @@
+/* Mobile Responsive Enhancements for Facebook Clone */
+
+/* Base responsive setup */
+* {
+  box-sizing: border-box;
+}
+
+/* Enhanced viewport meta support */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Mobile-first responsive breakpoints */
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+  /* Header adjustments */
+  header {
+    padding: 8px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header .container {
+    padding: 0 10px;
+  }
+
+  header .buscar {
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+
+  header .buscar form input[type="text"] {
+    font-size: 16px; /* Prevent zoom on iOS */
+    height: 32px;
+    padding: 0 12px;
+  }
+
+  header .buscar button {
+    height: 32px;
+    width: 40px;
+    font-size: 14px;
+  }
+
+  /* Mobile menu improvements */
+  header .menu {
+    padding: 5px 0;
+    margin-top: 8px;
+    justify-content: space-around !important;
+  }
+
+  header .menu a {
+    font-size: 10px;
+    margin: 0 2px;
+    padding: 4px;
+    text-align: center;
+    min-width: 40px;
+  }
+
+  header .menu .imagen {
+    width: 24px;
+    height: 24px;
+  }
+
+  header .menu .imagen img {
+    width: 24px;
+    height: 24px;
+  }
+
+  header .menu .menu-icons {
+    font-size: 18px;
+  }
+
+  /* Main content mobile layout */
+  main {
+    padding-top: 10px;
+  }
+
+  main .container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  /* Left sidebar mobile behavior */
+  main .left-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1050;
+    transition: left 0.3s ease;
+    padding: 20px 0;
+    overflow-y: auto;
+  }
+
+  main .left-sidebar.show {
+    left: 0;
+  }
+
+  main .left-sidebar nav {
+    padding: 0 20px;
+  }
+
+  main .left-sidebar nav a {
+    color: white !important;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+  }
+
+  main .left-sidebar nav a:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Main content area mobile */
+  main .main-content {
+    padding: 0 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Post form mobile */
+  main .main-content .post {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  main .main-content .post .photo a {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  main .main-content .post form textarea {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px; /* Prevent zoom on iOS */
+    min-height: 80px;
+  }
+
+  main .main-content .post form .contenedor-botones {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  main .main-content .post form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  /* Posts mobile layout */
+  main .all_post {
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  main .all_post .photo a {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  main .all_post .col-auto {
+    padding: 10px 8px 10px 10px;
+  }
+
+  main .all_post .col-10 {
+    padding: 10px 10px 10px 0;
+  }
+
+  main .onePost .name {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  main .onePost .text {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  main .all_post .imagen {
+    padding: 10px;
+  }
+
+  main .all_post .imagen img {
+    border-radius: 8px;
+  }
+
+  /* Interaction buttons mobile */
+  main .all_post .caja-botones {
+    margin: 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main .all_post .caja-botones button {
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Comments mobile */
+  main .all_post .comentario {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  main .all_post .comentario .photo a {
+    width: 32px;
+    height: 32px;
+  }
+
+  main .all_post .comentario form textarea {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 16px;
+    min-height: 36px;
+  }
+
+  main .all_post .comentario .respuesta {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Hide right sidebar completely on mobile */
+  main .right-sidebar {
+    display: none !important;
+  }
+
+  /* Mobile menu button */
+  .btn-menu {
+    display: block !important;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1877f2, #42a5f5);
+    border: none;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-menu:hover {
+    background: linear-gradient(135deg, #166fe5, #1976d2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header .buscar {
+    max-width: 300px;
+  }
+
+  header .menu {
+    padding: 5px 10px;
+  }
+
+  main .main-content {
+    padding: 0 15px;
+  }
+
+  main .all_post .col-auto {
+    padding: 12px 10px;
+  }
+
+  main .all_post .col-10 {
+    padding: 12px 15px 12px 0;
+  }
+
+  /* Still hide right sidebar */
+  main .right-sidebar {
+    display: none !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Show limited left sidebar on tablets */
+  main .left-sidebar {
+    position: static;
+    width: auto;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  main .left-sidebar nav a {
+    padding: 8px 12px;
+    margin: 2px 0;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  /* Hide menu button on tablets */
+  .btn-menu {
+    display: none !important;
+  }
+
+  /* Still hide right sidebar on tablets */
+  main .right-sidebar {
+    display: none !important;
+  }
+
+  main .main-content {
+    padding: 0 15px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Standard desktop layout */
+  main .left-sidebar {
+    position: static;
+    width: auto;
+    background: transparent;
+  }
+
+  main .right-sidebar {
+    display: block !important;
+  }
+
+  .btn-menu {
+    display: none !important;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+  header {
+    padding: 5px 0;
+  }
+
+  header .menu {
+    margin-top: 5px;
+  }
+
+  main {
+    padding-top: 5px;
+  }
+
+  main .main-content .post form textarea {
+    min-height: 60px;
+  }
+}
+
+/* High DPI / Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  main .all_post .imagen img,
+  main .all_post .photo img,
+  header .menu .imagen img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Improve touch targets */
+@media (pointer: coarse) {
+  header .menu a,
+  main .all_post .caja-botones button,
+  main .left-sidebar nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main .all_post .comentario form textarea {
+    min-height: 44px;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles if needed */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus improvements for accessibility */
+@media (prefers-reduced-motion: no-preference) {
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px solid #1877f2;
+    outline-offset: 2px;
+    transition: outline 0.2s ease;
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  main .left-sidebar,
+  main .right-sidebar,
+  .btn-menu {
+    display: none !important;
+  }
+
+  main .main-content {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  main .all_post {
+    break-inside: avoid;
+    margin-bottom: 20px;
+  }
+}

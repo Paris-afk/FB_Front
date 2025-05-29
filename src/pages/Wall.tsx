@@ -4,12 +4,17 @@ import MyPost from "../components/Wall/MyPost";
 import AllPost from "../components/Wall/AllPost";
 import LeftSidebar from "../components/Wall/LeftSidebar";
 import RightSideBar from "../components/Wall/RightSideBar";
+import "../css/bootstrap5-fixes.css";
 
-const Wall: React.FC = () => {
+interface WallProps {
+  onLogout?: () => void;
+}
+
+const Wall: React.FC<WallProps> = ({ onLogout }) => {
   return (
     <div>
       <header>
-        <Header />
+        <Header onLogout={onLogout} />
       </header>
 
       <main className="container">

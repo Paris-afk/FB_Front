@@ -3,7 +3,7 @@ import persona2 from "../../images/persona2.jpg";
 function AnswerForm() {
   return (
     <div>
-      <div className="row no-gutters comentario">
+      <div className="row g-0 comentario">
         <div className="col-auto photo">
           <a href="/#">
             <img src={persona2} alt="" />

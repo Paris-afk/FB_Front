@@ -7,12 +7,13 @@ body {
 /* aqui se cambia el color de los iconos*/
 a {
   color: #373737;
+  text-decoration: none !important;
 }
 
 /* aqui se cambia el color de los iconos cuando se pone el puntero sobre el*/
-a :hover {
+a:hover {
   color: #373737;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* header */
@@ -44,11 +45,12 @@ header .buscar form input[type="text"] {
   border-radius: 3px 0px 0px 3px;
   color: #6d6d6d;
   font-family: Helvetica, Arial, sans-serif;
-  margin-left: 9px;
+  margin-left: 0px;
+  outline: none;
 }
 
 header .buscar button {
-  width: 200%;
+  width: 100%;
   font-size: 14px;
   margin-top: 0px;
   padding: 0 10px;
@@ -63,6 +65,39 @@ header .buscar button {
 header .buscar button:hover {
   background: #099efc;
   color: white;
+}
+
+/* Mejoras para el buscador en Bootstrap 5 */
+header .buscar .row {
+  align-items: stretch;
+  margin: 0;
+  display: flex;
+}
+
+header .buscar .col-8,
+header .buscar .col-4 {
+  display: flex;
+  padding: 0;
+}
+
+header .buscar .col-8 {
+  flex: 1;
+}
+
+header .buscar .col-4 {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+header .buscar .col-8 input {
+  flex: 1;
+}
+
+header .buscar .col-4 button {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header .menu {
@@ -92,6 +127,30 @@ header .menu .imagen {
 header .menu .imagen img {
   border-radius: 60px;
   margin-right: 8px;
+}
+
+/* Botón de logout en header */
+header .menu .logout-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+header .menu .logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+header .menu .logout-button:active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* MidiaQueries */
@@ -152,7 +211,7 @@ main {
 }
 
 main .left-sidebar nav {
-  border-bottom: 1px solid #373737;
+  border-bottom: none;
 }
 
 main .left-sidebar nav a {
@@ -164,8 +223,8 @@ main .left-sidebar nav a {
 }
 
 main .left-sidebar nav a:hover {
-  background: white;
-  text-decoration: none;
+  background: #f0f2f5;
+  text-decoration: none !important;
 }
 
 main .left-sidebar nav a i {
@@ -260,12 +319,19 @@ main .all_post .photo img {
 
 main .onePost .name {
   line-height: 16px;
-  /* esta propiedad de line-height es para dejar un espacio entre los parramos de un mismo texto; */
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Roboto", sans-serif;
+  font-weight: 600;
   display: inline-block;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-decoration: none;
+  color: #050505;
+}
+
+main .onePost .name:hover {
+  text-decoration: underline;
+  color: #050505;
 }
 
 main .onePost .text {
@@ -287,20 +353,46 @@ main .all_post .imagen {
 main .all_post .imagen img {
   width: 100%;
   border-radius: 8px;
-  margin-left: 12%;
+  margin-left: 0;
+  display: block;
+  margin: 0 auto;
 }
 
 main .all_post .caja-botones {
   margin: 20px;
 }
 
-main .all_post .caja-botones button {
+main .all_post .caja-botones .like-button {
+  background: transparent;
+  border: none;
+  color: #65676b;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+main .all_post .caja-botones .like-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+main .all_post .caja-botones .like-button.liked {
+  color: #1876f2;
+}
+
+main .all_post .caja-botones .like-button.liked svg {
+  color: #1876f2;
+}
+
+main .all_post .caja-botones button:not(.like-button) {
   background: #1176b6;
   color: white;
   cursor: pointer;
-  /* background: white; */
   padding: 10px 35px;
-  /* pading 10 arriba y 20 a los lados */
   display: inline-block;
   font-size: 18px;
   line-height: 18px;
@@ -308,15 +400,11 @@ main .all_post .caja-botones button {
   border-radius: 18px;
 }
 
-main .all_post .caja-botones button:hover {
-  background: #0d659d;
-  color: white;
+/* Remover párrafo de like separado */
+main .all_post .caja-botones p {
+  display: none;
 }
 
-main .all_post .caja-botones p {
-  margin-bottom: 0px;
-  color: #1782c6;
-}
 /* comentarios */
 
 main .all_post .comentario {
@@ -360,17 +448,38 @@ main .all_post .caja-botones-comentarios button:hover {
   background: #1782c6;
   color: white;
 }
-main .all_post .caja-botones-comentarios p {
-  margin-top: 10;
-  padding-top: 10px;
+
+/* Estilos para botón de like en comentarios */
+main .all_post .caja-botones-comentarios .like-button-comment {
+  background: transparent;
+  border: none;
+  color: #65676b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
 }
 
-/* para convertir la foto de los comentarios mas pequeña */
+main .all_post .caja-botones-comentarios .like-button-comment:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-main .all_post .comentario .photo a {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
+main .all_post .caja-botones-comentarios .like-button-comment.liked {
+  color: #1876f2;
+}
+
+main .all_post .caja-botones-comentarios .like-button-comment.liked svg {
+  color: #1876f2;
+}
+
+/* Ocultar los estilos antiguos de botones de comentarios */
+main .all_post .caja-botones-comentarios button:not(.like-button-comment) {
+  display: none;
 }
 
 /* Barra lateral derecha */
