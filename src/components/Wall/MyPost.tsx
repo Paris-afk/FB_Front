@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faFileImage } from "@fortawesome/free-solid-svg-icons";
 import persona2 from "../../images/persona2.jpg";

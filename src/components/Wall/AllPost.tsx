@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import AnswerForm from "./AnswerForm";
 import ComentaryInPost from "./ComentaryInPost";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

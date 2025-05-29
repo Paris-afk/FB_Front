@@ -1,7 +1,19 @@
-import React from "react";
+import * as React from "react";
 import "../../css/login/style.css";
 import facebook_logo from "../../images/facebook-logo.png";
-function Header() {
+
+interface HeaderProps {
+  onLogin?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onLogin }) => {
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (onLogin) {
+      onLogin();
+    }
+  };
+
   return (
     <header>
       <div className="header-block">
@@ -18,9 +30,11 @@ function Header() {
             <label>password</label>
             <br />
             <input type="password" name="password" /> <br />
-            <a href="#">Forgotten account?</a>
+            <button type="button" style={{background: 'none', border: 'none', color: '#1877f2', textDecoration: 'underline', cursor: 'pointer'}}>
+              Forgotten account?
+            </button>
           </div>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="login-button">
               <input type="submit" value="Log in" />
             </div>
@@ -29,6 +43,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

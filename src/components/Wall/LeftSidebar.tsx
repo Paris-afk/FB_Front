@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -10,7 +10,7 @@ import {
   faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
 
-function LeftSidebar() {
+const LeftSidebar: React.FC = () => {
   return (
     <div className="col-md-3 left-sidebar" id="left-sidebar">
       <nav>
@@ -45,6 +45,6 @@ function LeftSidebar() {
       </nav>
     </div>
   );
-}
+};
 
 export default LeftSidebar;

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import persona1 from "../../images/persona1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";

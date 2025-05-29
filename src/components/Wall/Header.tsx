@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import "../../css/wall/style.css";
 import persona2 from "../../images/persona2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +9,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Header() {
+const Header: React.FC = () => {
   return (
     <div>
       <header>
@@ -64,6 +64,6 @@ function Header() {
       </header>
     </div>
   );
-}
+};
 
 export default Header;

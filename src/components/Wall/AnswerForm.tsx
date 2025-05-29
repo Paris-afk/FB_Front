@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import persona2 from "../../images/persona2.jpg";
 function AnswerForm() {
   return (

@@ -1,9 +1,20 @@
-import React from "react";
+import * as React from "react";
 
-function ContainerForm() {
+interface ContainerFormProps {
+  onLogin?: () => void;
+}
+
+const ContainerForm: React.FC<ContainerFormProps> = ({ onLogin }) => {
+  const handleSignUp = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (onLogin) {
+      onLogin();
+    }
+  };
+
   return (
     <div className="container">
-      <form>
+      <form onSubmit={handleSignUp}>
         <div className="row">
           <div className="col-6 fb-social">
             <h2>Connect with friends and the</h2>
@@ -104,6 +115,6 @@ function ContainerForm() {
       </form>
     </div>
   );
-}
+};
 
 export default ContainerForm;
