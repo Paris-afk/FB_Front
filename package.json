@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@types/styled-components": "^5.1.34",

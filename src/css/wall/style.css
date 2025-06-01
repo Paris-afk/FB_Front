@@ -4,13 +4,13 @@ body {
   font-size: 16px;
 }
 
-/* aqui se cambia el color de los iconos*/
+/* Here you change the color of the icons */
 a {
   color: #373737;
   text-decoration: none !important;
 }
 
-/* aqui se cambia el color de los iconos cuando se pone el puntero sobre el*/
+/* Here you change the color of the icons when the cursor hovers over them */
 a:hover {
   color: #373737;
   text-decoration: none !important;
@@ -31,14 +31,14 @@ header .logo img {
   border-radius: 2px;
 }
 
-/* Buscar */
+/* Search */
 
-header .buscar form input[type="text"] {
+header .search form input[type="text"] {
   width: 100%;
   background-color: white;
   border: none;
   font-size: 14px;
-  /* esto del padin quiere decir 0 arriba y abajo y 10 a los lados */
+  /* This padding means 0 top and bottom and 10 on the sides */
   padding: 0px 10px;
   height: 25px;
   line-height: 25px;
@@ -49,7 +49,7 @@ header .buscar form input[type="text"] {
   outline: none;
 }
 
-header .buscar button {
+header .search button {
   width: 100%;
   font-size: 14px;
   margin-top: 0px;
@@ -62,38 +62,38 @@ header .buscar button {
   background-color: #edf0f5;
 }
 
-header .buscar button:hover {
+header .search button:hover {
   background: #099efc;
   color: white;
 }
 
-/* Mejoras para el buscador en Bootstrap 5 */
-header .buscar .row {
+/* Search improvements for Bootstrap 5 */
+header .search .row {
   align-items: stretch;
   margin: 0;
   display: flex;
 }
 
-header .buscar .col-8,
-header .buscar .col-4 {
+header .search .col-8,
+header .search .col-4 {
   display: flex;
   padding: 0;
 }
 
-header .buscar .col-8 {
+header .search .col-8 {
   flex: 1;
 }
 
-header .buscar .col-4 {
+header .search .col-4 {
   flex: 0 0 auto;
   width: auto;
 }
 
-header .buscar .col-8 input {
+header .search .col-8 input {
   flex: 1;
 }
 
-header .buscar .col-4 button {
+header .search .col-4 button {
   width: 40px;
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@ header .menu .imagen {
   width: 22px;
   height: 22px;
   overflow: hidden;
-  /* el overflow hidden es para ocultar una descripcion si la imagen la tiene  */
+  /* The overflow hidden is used to hide a description if the image has one */
 }
 
 header .menu .imagen img {
@@ -129,7 +129,7 @@ header .menu .imagen img {
   margin-right: 8px;
 }
 
-/* Botón de logout en header */
+/* Logout button in header */
 header .menu .logout-button {
   background: transparent;
   border: none;
@@ -193,7 +193,7 @@ header .menu .logout-button:active {
   header .menu {
     padding: 5px 15px 0 15px;
   }
-  /* arriba , derecha , abajo e izquiera */
+  /* top, right, bottom and left */
 }
 
 /* main */
@@ -216,7 +216,7 @@ main .left-sidebar nav {
 
 main .left-sidebar nav a {
   display: block;
-  /*  usando el display block cada uno abarca el 100% transformandolos en listas    */
+  /* Using display block each one takes 100% transforming them into lists */
   padding: 3px;
   font-family: "Roboto", sans-serif;
   color: #3d3d3d;
@@ -231,8 +231,8 @@ main .left-sidebar nav a i {
   margin-right: 10px;
 }
 
-/* contenido principal */
-/* publicar */
+/* Main content */
+/* Publish */
 main .main-content .post {
   margin-bottom: 25px;
   background: white;
@@ -243,7 +243,7 @@ main .main-content .post .photo a {
   width: 60px;
   display: inline-block;
   overflow: hidden;
-  /* este overflow es para decir que el contenido que no cabe se oculte */
+  /* This overflow is used to say that content that doesn't fit is hidden */
   border-radius: 100px;
   margin-top: 20px;
   margin-left: 5px;
@@ -268,13 +268,13 @@ main .main-content .post form textarea {
   margin-bottom: 15px;
 }
 
-main .main-content .post form .contenedor-botones {
+main .main-content .post form .button-container {
   padding: 20px 0px;
-  /* arriba y abajo , 0 hacia los lados */
+  /* top and bottom, 0 to the sides */
   border-top: 1px solid #c7c8ca;
 }
 
-main .main-content .post form .contenedor-botones a {
+main .main-content .post form .button-container a {
   color: #8d8d8d;
   font-size: 25px;
 }
@@ -295,7 +295,7 @@ main .main-content .post form button:hover {
   background: linear-gradient(to bottom, #1176b6, #1a87cd 100%);
 }
 
-/*publicaciones*/
+/* Posts */
 
 main .all_post {
   margin-bottom: 40px;
@@ -307,7 +307,7 @@ main .all_post .photo a {
   width: 60px;
   height: 60px;
   overflow: hidden;
-  /* el overflow hidden se usa para que el contenido abarque el maximo de si contenedor en este caso la foto con el cuadro */
+  /* The overflow hidden is used so that content covers the maximum of its container, in this case the photo with the frame */
   border-radius: 100px;
   margin-left: 5px;
 }
@@ -344,13 +344,13 @@ main .onePost .text {
   margin-bottom: 15px;
 }
 
-main .all_post .imagen {
+main .all_post .image {
   padding: 15px;
   background: white;
   margin-bottom: 15px;
 }
 
-main .all_post .imagen img {
+main .all_post .image img {
   width: 100%;
   border-radius: 8px;
   margin-left: 0;
@@ -358,11 +358,11 @@ main .all_post .imagen img {
   margin: 0 auto;
 }
 
-main .all_post .caja-botones {
+main .all_post .action-buttons {
   margin: 20px;
 }
 
-main .all_post .caja-botones .like-button {
+main .all_post .action-buttons .like-button {
   background: transparent;
   border: none;
   color: #65676b;
@@ -376,19 +376,19 @@ main .all_post .caja-botones .like-button {
   align-items: center;
 }
 
-main .all_post .caja-botones .like-button:hover {
+main .all_post .action-buttons .like-button:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-main .all_post .caja-botones .like-button.liked {
+main .all_post .action-buttons .like-button.liked {
   color: #1876f2;
 }
 
-main .all_post .caja-botones .like-button.liked svg {
+main .all_post .action-buttons .like-button.liked svg {
   color: #1876f2;
 }
 
-main .all_post .caja-botones button:not(.like-button) {
+main .all_post .action-buttons button:not(.like-button) {
   background: #1176b6;
   color: white;
   cursor: pointer;
@@ -400,25 +400,25 @@ main .all_post .caja-botones button:not(.like-button) {
   border-radius: 18px;
 }
 
-/* Remover párrafo de like separado */
-main .all_post .caja-botones p {
+/* Remove separate like paragraph */
+main .all_post .action-buttons p {
   display: none;
 }
 
-/* comentarios */
+/* Comments */
 
-main .all_post .comentario {
+main .all_post .comment {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #cbcbcb;
 }
 
-main .all_post .comentario .photo {
+main .all_post .comment .photo {
   padding-left: 0px;
   margin-right: 10px;
 }
 
-main .all_post .comentario form textarea {
+main .all_post .comment form textarea {
   width: 100%;
   border: 1px solid #cbcbcb;
   color: #565656;
@@ -430,13 +430,13 @@ main .all_post .comentario form textarea {
   font-size: 14px;
 }
 
-main .all_post .comentario .respuesta {
+main .all_post .comment .comment-content {
   font-size: 13px;
   margin-bottom: 10px;
 }
 
-/* caja botones de los comentarios de publicaciones */
-main .all_post .caja-botones-comentarios button {
+/* Comment buttons container */
+main .all_post .comment-buttons button {
   border-radius: 15px;
   border: none;
   font-size: 15px;
@@ -444,45 +444,82 @@ main .all_post .caja-botones-comentarios button {
   color: #1782c6;
 }
 
-main .all_post .caja-botones-comentarios button:hover {
+main .all_post .comment-buttons button:hover {
   background: #1782c6;
   color: white;
 }
 
-/* Estilos para botón de like en comentarios */
-main .all_post .caja-botones-comentarios .like-button-comment {
+/* Comment like button styles */
+main .all_post .comment-actions .like-button-comment {
   background: transparent;
   border: none;
   color: #65676b;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 4px 8px;
+  border-radius: 4px;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  min-height: 32px;
+  gap: 4px;
+  min-height: 24px;
+  line-height: 1;
+  outline: none; /* Remove default focus outline */
 }
 
-main .all_post .caja-botones-comentarios .like-button-comment:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+main .all_post .comment-actions .like-button-comment:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-main .all_post .caja-botones-comentarios .like-button-comment.liked {
+main .all_post .comment-actions .like-button-comment:focus {
+  outline: 1px solid #1877f2;
+  outline-offset: 1px;
+}
+
+main .all_post .comment-actions .like-button-comment.liked {
   color: #1876f2;
 }
 
-main .all_post .caja-botones-comentarios .like-button-comment.liked svg {
+main .all_post .comment-actions .like-button-comment.liked svg {
   color: #1876f2;
 }
 
-/* Ocultar los estilos antiguos de botones de comentarios */
-main .all_post .caja-botones-comentarios button:not(.like-button-comment) {
+main .all_post .comment-actions .like-button-comment svg {
+  font-size: 12px;
+}
+
+/* Header comment styles */
+.comment-header {
+  margin-bottom: 4px;
+}
+
+.comment-header strong {
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.comment-time {
+  font-size: 11px;
+  color: #65676b;
+  font-weight: 400;
+}
+
+/* Comment content styles */
+.comment-content {
+  font-size: 14px !important;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  color: #050505;
+}
+
+/* Hide old comment button styles */
+main .all_post .comment-buttons button:not(.like-button-comment) {
   display: none;
 }
 
-/* Barra lateral derecha */
+/* Right sidebar */
 
 main .right-sidebar h3 {
   font-size: 16px;
@@ -507,4 +544,168 @@ main .right-sidebar footer a {
   text-decoration: none;
   line-height: 14px;
   margin-right: 10px;
+}
+
+/* Comment and Share Button Styles */
+.comment-button,
+.share-button {
+  background: none;
+  border: none;
+  color: #65676b;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 10px !important;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background-color 0.2s ease;
+  min-height: 24px;
+  line-height: 1;
+  outline: none; /* Remove default focus outline */
+}
+
+.comment-button:hover,
+.share-button:hover {
+  background-color: #f2f3f4;
+  color: #1877f2;
+}
+
+.comment-button:focus,
+.share-button:focus {
+  outline: 1px solid #1877f2;
+  outline-offset: 1px;
+}
+
+.comment-button svg,
+.share-button svg {
+  font-size: 12px;
+}
+
+/* Active state for comment button */
+.comment-button.active {
+  color: #1877f2;
+}
+
+/* Comment form styles */
+.comment-form {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e4e6ea;
+}
+
+.comment-form textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #f0f2f5;
+  border-radius: 16px;
+  padding: 8px 12px;
+  font-size: 14px;
+  resize: none;
+  min-height: 32px;
+}
+
+.comment-form textarea:focus {
+  background: #e4e6ea;
+}
+
+/* Comment header styles */
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.comment-time {
+  font-size: 12px;
+  color: #65676b;
+  font-weight: normal;
+}
+
+.comment-header strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for comments */
+@media (max-width: 768px) {
+  .comment-button,
+  .share-button {
+    font-size: 11px;
+    padding: 3px 6px;
+    min-height: 22px;
+  }
+  
+  .comment-button svg,
+  .share-button svg {
+    font-size: 11px;
+  }
+
+  main .all_post .comment-actions .like-button-comment {
+    font-size: 11px;
+    padding: 3px 6px;
+    min-height: 22px;
+  }
+
+  main .all_post .comment-actions .like-button-comment svg {
+    font-size: 11px;
+  }
+  
+  .comment-header {
+    gap: 6px;
+  }
+  
+  .comment-header strong {
+    font-size: 12px;
+  }
+  
+  .comment-time {
+    font-size: 10px;
+  }
+
+  .comment-content {
+    font-size: 13px;
+  }
+}
+
+/* Global button focus styles - remove blue outlines */
+button:focus,
+button:focus-visible,
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom focus styles for Facebook-like buttons */
+button:focus,
+button:focus-visible {
+  outline: 1px solid #1877f2 !important;
+  outline-offset: 1px !important;
+}
+
+/* Header button focus styles */
+header button:focus,
+header button:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.8) !important;
+  outline-offset: 1px !important;
+}
+
+/* Form button focus styles */
+.button-container button:focus,
+.button-container button:focus-visible {
+  outline: 2px solid #1877f2 !important;
+  outline-offset: 2px !important;
+}
+
+/* Action button focus styles */
+.action-buttons button:focus,
+.action-buttons button:focus-visible {
+  outline: 1px solid #1877f2 !important;
+  outline-offset: 1px !important;
 }

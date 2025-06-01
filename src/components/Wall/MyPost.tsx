@@ -1,13 +1,20 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faFileImage } from "@fortawesome/free-solid-svg-icons";
-import persona2 from "../../images/persona2.jpg";
+import { User } from "../../models/User";
+import { PostRepository } from "../../repositories/PostRepository";
 import "../../css/wall/style.css";
 import "../../css/responsive.css";
-import AllPost from "./AllPost";
 
-function MyPost() {
+interface MyPostProps {
+  currentUser: User;
+  onPostCreated?: () => void;
+}
+
+function MyPost({ currentUser, onPostCreated }: MyPostProps) {
   const [sidebarVisible, setSidebarVisible] = React.useState(false);
+  const [postContent, setPostContent] = React.useState("");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
@@ -18,6 +25,33 @@ function MyPost() {
       } else {
         sidebar.classList.add('show');
       }
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!postContent.trim() || isSubmitting) return;
+
+    setIsSubmitting(true);
+    try {
+      const postRepo = PostRepository.getInstance();
+      postRepo.createPost(postContent.trim());
+      
+      setPostContent("");
+      if (onPostCreated) {
+        onPostCreated();
+      }
+    } catch (error) {
+      console.error("Error creating post:", error);
+      // You could add error handling UI here
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && e.ctrlKey) {
+      handleSubmit(e);
     }
   };
 
@@ -38,30 +72,43 @@ function MyPost() {
       <div className="row">
         <div className="col-auto photo">
           <a href="/#">
-            <img src={persona2} alt="" />
+            <img src={currentUser.avatar} alt={currentUser.fullName} />
           </a>
         </div>
 
         <div className="col">
-          <form action="">
-            <textarea name="" id="" placeholder="say something"></textarea>
+          <form onSubmit={handleSubmit}>
+            <textarea 
+              name="content" 
+              id="content" 
+              placeholder="What's on your mind?"
+              value={postContent}
+              onChange={(e) => setPostContent(e.target.value)}
+              onKeyPress={handleKeyPress}
+              rows={3}
+              disabled={isSubmitting}
+            />
 
-            <div className="contenedor-botones d-flex justify-content-between">
+            <div className="button-container d-flex justify-content-between">
               <div className="media">
-                <a href="/#">
+                <a href="/#" onClick={(e) => e.preventDefault()}>
                   <FontAwesomeIcon icon={faFileImage} />
                 </a>
               </div>
 
               <div>
-                <button>Publicar</button>
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting || !postContent.trim()}
+                >
+                  {isSubmitting ? "Publishing..." : "Publish"}
+                </button>
               </div>
             </div>
           </form>
         </div>
       </div>
       <hr></hr>
-
     </div>
   );
 }
