@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/responsive.css';
 import Login from './pages/Login';
@@ -7,6 +7,7 @@ import Wall from './pages/Wall';
 import Friends from './pages/Friends';
 import Messages from './pages/Messages';
 import Pages from './pages/Pages';
+import Videos from './pages/Videos';
 import './App.css';
 import Header from './components/Wall/Header';
 import LeftSidebar from './components/Wall/LeftSidebar';
@@ -89,6 +90,18 @@ const AppRoutes: React.FC<{ isLoggedIn: boolean, login: () => void, logout: () =
           isLoggedIn ? (
             <MainLayout onLogout={logout}>
               <Pages />
+            </MainLayout>
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route
+        path="/videos"
+        element={
+          isLoggedIn ? (
+            <MainLayout onLogout={logout}>
+              <Videos />
             </MainLayout>
           ) : (
             <Navigate to="/login" replace />

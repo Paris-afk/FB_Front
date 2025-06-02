@@ -69,7 +69,7 @@ const LeftSidebar: React.FC = () => {
           }}
         >
           <FontAwesomeIcon icon={faPlay} />
-          &nbsp; Videos
+          &nbsp; Vidéos
         </NavLink>
         <NavLink
           to="/photos"
