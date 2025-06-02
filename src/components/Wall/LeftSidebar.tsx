@@ -41,7 +41,7 @@ const LeftSidebar: React.FC = () => {
           }}
         >
           <FontAwesomeIcon icon={faEnvelope} />
-          &nbsp; Private Messages
+          &nbsp; Messages privés
         </NavLink>
         <NavLink
           to="/pages"
