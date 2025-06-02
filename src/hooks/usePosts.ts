@@ -106,6 +106,45 @@ export const usePosts = () => {
     }
   }, [repository]);
 
+  // Nuevas funciones para gestión de localStorage
+  const clearStorage = useCallback(() => {
+    try {
+      repository.clearStorage();
+      repository.refreshData();
+      setPosts(repository.getAllPosts());
+      setCurrentUser(repository.getCurrentUser());
+      setError(null);
+    } catch (err) {
+      setError('Error clearing storage');
+      console.error('Error clearing storage:', err);
+    }
+  }, [repository]);
+
+  const resetToInitialData = useCallback(() => {
+    try {
+      setLoading(true);
+      repository.resetToInitialData();
+      setPosts(repository.getAllPosts());
+      setCurrentUser(repository.getCurrentUser());
+      setError(null);
+    } catch (err) {
+      setError('Error resetting data');
+      console.error('Error resetting data:', err);
+    } finally {
+      setLoading(false);
+    }
+  }, [repository]);
+
+  const exportData = useCallback(() => {
+    try {
+      return repository.exportData();
+    } catch (err) {
+      setError('Error exporting data');
+      console.error('Error exporting data:', err);
+      return null;
+    }
+  }, [repository]);
+
   return {
     posts,
     currentUser,
@@ -116,6 +155,9 @@ export const usePosts = () => {
     addComment,
     toggleCommentLike,
     deletePost,
-    refreshPosts
+    refreshPosts,
+    clearStorage,
+    resetToInitialData,
+    exportData
   };
 };

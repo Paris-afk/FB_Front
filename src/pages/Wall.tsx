@@ -4,6 +4,7 @@ import MyPost from "../components/Wall/MyPost";
 import AllPost from "../components/Wall/AllPost";
 import LeftSidebar from "../components/Wall/LeftSidebar";
 import RightSideBar from "../components/Wall/RightSideBar";
+import StorageManager from "../components/Wall/StorageManager";
 import { PostRepository } from "../repositories/PostRepository";
 import "../css/bootstrap5-fixes.css";
 
@@ -37,6 +38,9 @@ const Wall: React.FC<WallProps> = ({ onLogout }) => {
           <RightSideBar />
         </div>
       </main>
+      
+      {/* Storage Manager for localStorage testing */}
+      <StorageManager onDataChange={handlePostCreated} />
     </div>
   );
 };
