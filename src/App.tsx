@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Wall from './pages/Wall';
 import Friends from './pages/Friends';
 import Messages from './pages/Messages';
+import Pages from './pages/Pages';
 import './App.css';
 import Header from './components/Wall/Header';
 import LeftSidebar from './components/Wall/LeftSidebar';
@@ -76,6 +77,18 @@ const AppRoutes: React.FC<{ isLoggedIn: boolean, login: () => void, logout: () =
           isLoggedIn ? (
             <MainLayout onLogout={logout}>
               <Messages />
+            </MainLayout>
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route
+        path="/pages"
+        element={
+          isLoggedIn ? (
+            <MainLayout onLogout={logout}>
+              <Pages />
             </MainLayout>
           ) : (
             <Navigate to="/login" replace />
