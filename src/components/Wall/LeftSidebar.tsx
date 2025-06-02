@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -14,34 +15,104 @@ const LeftSidebar: React.FC = () => {
   return (
     <div className="col-md-3 left-sidebar" id="left-sidebar">
       <nav>
-        <a href="/#">
+        <NavLink
+          to="/friends"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            marginBottom: 8,
+          }}
+        >
           <FontAwesomeIcon icon={faUser} />
           &nbsp; Friends
-        </a>
-        <a href="/#">
+        </NavLink>
+        <NavLink
+          to="/messages"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            marginBottom: 8,
+          }}
+        >
           <FontAwesomeIcon icon={faEnvelope} />
           &nbsp; Private Messages
-        </a>
-        <a href="/#">
+        </NavLink>
+        <NavLink
+          to="/pages"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            marginBottom: 8,
+          }}
+        >
           <FontAwesomeIcon icon={faThumbsUp} />
           &nbsp; Pages
-        </a>
-        <a href="/#">
+        </NavLink>
+        <NavLink
+          to="/videos"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            marginBottom: 8,
+          }}
+        >
           <FontAwesomeIcon icon={faPlay} />
           &nbsp; Videos
-        </a>
-        <a href="/#">
+        </NavLink>
+        <NavLink
+          to="/photos"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            marginBottom: 8,
+          }}
+        >
           <FontAwesomeIcon icon={faCamera} />
           &nbsp; Photos
-        </a>
-        <a href="/#">
+        </NavLink>
+        <NavLink
+          to="/music"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            marginBottom: 8,
+          }}
+        >
           <FontAwesomeIcon icon={faMusic} />
           &nbsp; Music
-        </a>
-        <a href="/#">
+        </NavLink>
+        <NavLink
+          to="/books"
+          className={({ isActive }) => (isActive ? "active" : "")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "inherit",
+            marginBottom: 8,
+          }}
+        >
           <FontAwesomeIcon icon={faBookOpen} />
           &nbsp; Books
-        </a>
+        </NavLink>
       </nav>
     </div>
   );
