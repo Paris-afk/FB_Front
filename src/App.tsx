@@ -15,6 +15,10 @@ import LeftSidebar from './components/Wall/LeftSidebar';
 import RightSideBar from './components/Wall/RightSideBar';
 import Music from './pages/Music'; // Import the Music component
 import Books from './pages/Books'; // Import the Books component
+import Privacity from './pages/Privacity';
+import AboutUs from './pages/AboutUs';
+import Publicity from './pages/Publicity';
+import Settings from './pages/Settings';
 
 // Persist auth state in localStorage for refreshes
 function useAuth() {
@@ -141,6 +145,54 @@ const AppRoutes: React.FC<{ isLoggedIn: boolean, login: () => void, logout: () =
           isLoggedIn ? (
             <MainLayout onLogout={logout}>
               <Books />
+            </MainLayout>
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route
+        path="/privacity"
+        element={
+          isLoggedIn ? (
+            <MainLayout onLogout={logout}>
+              <Privacity />
+            </MainLayout>
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route
+        path="/about-us"
+        element={
+          isLoggedIn ? (
+            <MainLayout onLogout={logout}>
+              <AboutUs />
+            </MainLayout>
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route
+        path="/publicity"
+        element={
+          isLoggedIn ? (
+            <MainLayout onLogout={logout}>
+              <Publicity />
+            </MainLayout>
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route
+        path="/settings"
+        element={
+          isLoggedIn ? (
+            <MainLayout onLogout={logout}>
+              <Settings />
             </MainLayout>
           ) : (
             <Navigate to="/login" replace />
