@@ -1,6 +1,5 @@
 import * as React from "react";
 import { PostRepository } from "../repositories/PostRepository";
-import { faker } from '@faker-js/faker';
 import '../css/wall/style.css';
 
 // Key for storing friend relationships in localStorage
