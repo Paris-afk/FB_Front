@@ -97,7 +97,7 @@ const LeftSidebar: React.FC = () => {
           }}
         >
           <FontAwesomeIcon icon={faMusic} />
-          &nbsp; Music
+          &nbsp; Musique
         </NavLink>
         <NavLink
           to="/books"

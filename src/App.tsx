@@ -13,6 +13,7 @@ import './App.css';
 import Header from './components/Wall/Header';
 import LeftSidebar from './components/Wall/LeftSidebar';
 import RightSideBar from './components/Wall/RightSideBar';
+import Music from './pages/Music'; // Import the Music component
 
 // Persist auth state in localStorage for refreshes
 function useAuth() {
@@ -115,6 +116,18 @@ const AppRoutes: React.FC<{ isLoggedIn: boolean, login: () => void, logout: () =
           isLoggedIn ? (
             <MainLayout onLogout={logout}>
               <Photos />
+            </MainLayout>
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+      <Route
+        path="/music"
+        element={
+          isLoggedIn ? (
+            <MainLayout onLogout={logout}>
+              <Music />
             </MainLayout>
           ) : (
             <Navigate to="/login" replace />
