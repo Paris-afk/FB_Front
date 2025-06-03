@@ -26,6 +26,8 @@ jobs:
           git config --global user.email "paris.obed@hotmail.com"
           git config --global user.name "parisafk"
       - name: Deploy
-        run: npm run deploy
         env:
           CI: false
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx gh-pages -d build -u "parisafk <paris.obed@hotmail.com>"
