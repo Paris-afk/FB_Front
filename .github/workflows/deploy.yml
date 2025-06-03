@@ -1,11 +1,11 @@
-# This workflow will build and deploy the React app to GitHub Pages on every push to main
+# This workflow will build and deploy the React app to GitHub Pages on every push to master
 # Comments are in English, all site content remains in French
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
