@@ -6,40 +6,40 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false # Importante para el despliegue
 
-      - name: Use Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "18"
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Set homepage in package.json
-        run: |
-          npm pkg set homepage="https://paris-afk.github.io/FB_Front"
+        run: npm ci
 
       - name: Build
-        run: npm run build
         env:
+          NODE_ENV: production
           CI: false
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build # Directorio build para React en lugar de out para Next.js
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
-          branch: gh-pages
-          commit-message: "Deploy from GitHub Actions"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
+        id: deployment
+        uses: actions/deploy-pages@v4
