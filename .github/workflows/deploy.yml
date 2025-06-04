@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false # Importante para el despliegue
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -24,6 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set homepage in package.json
+        run: |
+          npm pkg set homepage="https://paris-afk.github.io/FB_Front"
+
       - name: Build
         run: npm run build
         env:
@@ -32,6 +38,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build # Carpeta que contiene los archivos de la build
-          branch: gh-pages # Rama donde se publicará
+          folder: build
+          branch: gh-pages
           commit-message: "Deploy from GitHub Actions"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
