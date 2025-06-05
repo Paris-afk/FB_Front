@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink } from "react-router-dom";
 import "../../css/wall/style.css";
 import "../../css/bootstrap5-fixes.css";
 import "../../css/responsive.css";
@@ -39,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
             </div>
 
             <nav className="col-12 col-md-5 col-lg-4 menu d-flex justify-content-between ms-30 mt-auto order-1 order-md-2 mb-2 mb-md-0 me-md-2 ms-md-3">
-              <a href="/#" className="imagen">
+              <NavLink to="/wall" className="imagen">
                 <img
                   src={persona2}
                   alt="Profile"
@@ -47,26 +48,26 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
                   height="28"
                   style={{ width: "28px", height: "28px" }}
                 />
-              </a>
-              <a href="/#" className="menu-letras">
+              </NavLink>
+              <NavLink to="/wall" className="menu-letras">
                 Home
-              </a>
-              <a className="menu-letras" href="/#">
+              </NavLink>
+              <NavLink className="menu-letras" to="/pages">
                 Create
-              </a>
-              <a className="menu-icons" href="/#" title="Friends">
+              </NavLink>
+              <NavLink className="menu-icons" to="/friends" title="Friends">
                 <FontAwesomeIcon icon={faUser} />
-              </a>
+              </NavLink>
 
-              <a className="menu-icons" href="/#" title="Messages">
+              <NavLink className="menu-icons" to="/messages" title="Messages">
                 <FontAwesomeIcon icon={faComment} />
-              </a>
+              </NavLink>
 
-              <a className="menu-icons" href="/#" title="Notifications">
+              <NavLink className="menu-icons" to="/wall" title="Notifications">
                 <FontAwesomeIcon icon={faBell} />
-              </a>
+              </NavLink>
 
-              <button 
+              <button
                 onClick={onLogout}
                 className="logout-button"
                 title="Logout"
